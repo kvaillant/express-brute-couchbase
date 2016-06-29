@@ -13,9 +13,9 @@ Usage
 -----
 ``` js
 var ExpressBrute = require('express-brute'),
-	MemcachedStore = require('express-brute-couchbase');
+	CouchbaseStore = require('express-brute-couchbase');
 
-var store = new MemcachedStore('http://127.0.0.1:8091');
+var store = new CouchbaseStore('http://127.0.0.1:8091');
 var bruteforce = new ExpressBrute(store);
 
 app.post('/auth',
@@ -28,7 +28,7 @@ app.post('/auth',
 
 Options
 -------
-- `host` Couchbase cluster options for node-couchbase constructor, is json. default : ({
+- `host` Couchbase cluster options for couchnode constructor, is json. default : ({
   cluster: 'http://localhost:8091',
   bucket: 'express-brute-store',
   password: ''
@@ -39,4 +39,4 @@ Options
 
 
 
-For details see [node-memcached](http://github.com/3rd-Eden/node-memcached).
+For details see [couchnode](https://github.com/couchbase/couchnode).
