@@ -27,7 +27,7 @@ CouchbaseStore.prototype.get = function (key, callback) {
                 data.lastRequest = new Date(data.lastRequest);
                 data.firstRequest = new Date(data.firstRequest);
             }
-            typeof callback == 'function' && callback(err, data);
+            typeof callback == 'function' && callback(null, data);
         }
     });
 };
