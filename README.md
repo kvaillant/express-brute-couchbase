@@ -28,7 +28,7 @@ app.post('/auth',
 
 Options
 -------
-- `host` Couchbase cluster options for couchnode constructor, is json. default : ({
+- `couchoptions` Couchbase cluster options for couchnode constructor, is json. default : ({
   cluster: 'http://localhost:8091',
   bucket: 'express-brute-store',
   password: ''
