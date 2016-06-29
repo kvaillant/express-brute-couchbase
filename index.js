@@ -5,7 +5,7 @@ var AbstractClientStore = require('express-brute/lib/AbstractClientStore'),
 var CouchbaseStore = module.exports = function (couchoptions, options) {
     AbstractClientStore.apply(this, arguments);
     this.options = _.extend({}, CouchbaseStore.defaults, options);
-    this.couchbaseOptions = _.extend({}, CouchbaseStore.bucketdefaults, this.couchoptions);
+    this.couchbaseOptions = _.extend({}, CouchbaseStore.bucketdefaults, couchoptions);
 
     this.client = new couchbase.Cluster(this.couchbaseOptions.cluster).openBucket(this.couchbaseOptions.bucket, this.couchbaseOptions.password);
 };

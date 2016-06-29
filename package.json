@@ -1,6 +1,6 @@
 {
-  "name": "express-brute-couchbase.git",
-  "version": "0.0.1",
+  "name": "express-brute-couchbase",
+  "version": "0.0.2",
   "description": "A couchbase store for express-brute",
   "main": "index.js",
   "scripts": {
