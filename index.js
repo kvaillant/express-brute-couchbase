@@ -19,7 +19,7 @@ CouchbaseStore.prototype.set = function (key, value, lifetime, callback) {
 };
 CouchbaseStore.prototype.get = function (key, callback) {
     this.client.get(this.options.prefix + key, function (err, data) {
-        if (err) {
+        if (err && err.code != 13) { // Key not found
             typeof callback == 'function' && callback(err, null);
         } else {
             if (data) {
