@@ -1,6 +1,6 @@
 {
   "name": "express-brute-couchbase",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A couchbase store for express-brute",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "url": "https://github.com/kvaillant/express-brute-couchbase/issues"
   },
   "homepage": "https://github.com/kvaillant/express-brute-couchbase#readme",
-  "dependencies": {
+  "peerDependencies": {
     "couchnode": "^4.3.4",
     "express-brute": "^1.0.1",
     "underscore": "^1.8.3"
