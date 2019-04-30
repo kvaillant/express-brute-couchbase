@@ -7,7 +7,13 @@ var CouchbaseStore = module.exports = function (couchoptions, options) {
     this.options = _.extend({}, CouchbaseStore.defaults, options);
     this.couchbaseOptions = _.extend({}, CouchbaseStore.bucketdefaults, couchoptions);
 
-    this.client = new couchbase.Cluster(this.couchbaseOptions.cluster).openBucket(this.couchbaseOptions.bucket, this.couchbaseOptions.password);
+    var cluster = new couchbase.Cluster(this.couchbaseOptions.cluster);
+    if (this.couchbaseOptions.username) {
+        cluster.authenticate(this.couchbaseOptions.username, this.couchbaseOptions.password);
+        this.client = cluster.openBucket(this.couchbaseOptions.bucket);
+    } else {
+        this.client = cluster.openBucket(this.couchbaseOptions.bucket, this.couchbaseOptions.password);
+    }
 };
 
 CouchbaseStore.prototype = Object.create(AbstractClientStore.prototype);
